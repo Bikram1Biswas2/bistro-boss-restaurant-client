@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 
 const SignUp = () => {
@@ -108,8 +110,14 @@ const navigate = useNavigate()
 
                 <input className="btn btn-primary" type="submit" value="SignUp" />
               </div>
+              <div className='text-center'>
+                       <p>Or</p>
+                       <hr />
+                        <p className='mt-3'>Continue With Google</p>
+                       </div>
+                        <SocialLogin ></SocialLogin>
             </form>
-            <Link className="text-center text-orange-400" to='/'>Back to Home</Link>
+            <Link className="text-orange-400  items-center flex justify-center" to='/'><FaArrowAltCircleLeft></FaArrowAltCircleLeft> Back to Home</Link>
             <p className='text-center pb-3'><small> Already SignUp?<Link className='text-red-600' to='/login'> Login Now</Link></small></p>
           </div>
         </div>

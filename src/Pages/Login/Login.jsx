@@ -4,6 +4,8 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../Components/SocialLogin/SocialLogin';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
 
 const Login = () => {
 
@@ -96,11 +98,19 @@ const Login = () => {
                                 placeholder="Enter the Above captcha" className="input input-bordered" required />
                             
                         </div>
+                       
                         <div className="text-center">
                             <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
-                        </div>
+                        </div> 
+                       <div className='text-center'>
+                       <p>Or</p>
+                       <hr />
+                        <p className='mt-3'>Continue With Google</p>
+                       </div>
+                        <SocialLogin ></SocialLogin>
                     </form>
                     <p className='text-center pb-3'><small>New Here? <Link className='text-red-600' to='/signUp'>Create an Account</Link></small></p>
+                    <Link className="text-orange-400  items-center flex justify-center p-4" to='/'><FaArrowAltCircleLeft></FaArrowAltCircleLeft> Back to Home</Link>
                 </div>
             </div>
         </div>

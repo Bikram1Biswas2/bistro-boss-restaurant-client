@@ -10,12 +10,14 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import PrivateRoute from "./PrivateRoute";
+import ErrorElement from "../Pages/ErrorElement/ErrorElement";
 
 
   export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorElement></ErrorElement>,
       children : [
         {
             path: '/',
