@@ -1,6 +1,7 @@
-import { FaBookDead, FaCalendar, FaEnvelope, FaHome, FaSearch, FaShoppingCart, FaStreetView, FaVoicemail } from "react-icons/fa";
+import { FaBook, FaBookDead, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaStreetView, FaUserFriends } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useCarts from "../../hooks/useCarts";
+import { ImSpoonKnife } from "react-icons/im";
 
 
 const Dashboard = () => {
@@ -15,7 +16,36 @@ const Dashboard = () => {
         {/* dashboard side bar */}
          <div className="w-64 min-h-screen bg-orange-400">
             <ul className="menu p-4">
-                <li>
+                {
+                    isAdmin? <>
+                             <li>
+                                <NavLink to='/dashboard/adminHome'>
+                                    <FaHome></FaHome>
+                                    Admin Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/addItems'>
+                                <ImSpoonKnife />
+                                    Add items</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/manageItems'>
+                                    <FaList></FaList>
+                                    Manage items</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/manageBookings'>
+                                    <FaBook></FaBook>
+                                    Manage bookings</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/users'>
+                                    <FaUserFriends></FaUserFriends>
+                                    All Users</NavLink>
+                            </li>
+                    </>:
+                    <>
+                       <li>
                     <NavLink to='/dashboard/userHome'>
                         <FaHome></FaHome>
                         User Home</NavLink>
@@ -40,6 +70,9 @@ const Dashboard = () => {
                         <FaBookDead></FaBookDead>
                         My Bookings</NavLink>
                     </li>
+                    </>
+                }
+             
                     {/* Shared */}
                     <div className="divider"></div> 
                     <li>
